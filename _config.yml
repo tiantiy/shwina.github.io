@@ -7,7 +7,7 @@ description: A jekyll theme
 url: http://scotte.github.io
 
 # baseurl will usually be ''
-baseurl: /jekyll-clean
+baseurl: ''
 
 # This can be '' to hide the Github nav button
 github: 'scotte/jekyll-clean'
