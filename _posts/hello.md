@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hello Post
+title: "Teaching MATLAB in 3 hours"
 ---
 
-Hello
+
