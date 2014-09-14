@@ -73,22 +73,27 @@ a textbook on MATLAB, for example:
 So, in one of my earlier sessions, the first few lines of code we would
 type in to the command line would be something like this:
 
-```
-> a = 1;
-> b = 2;
-> a + b
-> a * b
-> c = [a, b]
 
-```
+{% highlight matlab %}
+
+a = 1
+b = 2
+a + b
+a * b
+c = [a, b]
+
+{% endhighlight %} 
+
 
 Compare _that_ to the first couple of lines of code that we type in now:
 
-```
-> patient_data = csvread(`inflammation-01.csv`);
-> imagesc(patient_data)
+{% highlight matlab %}
 
-``` 
+patient_data = csvread(`inflammation-01.csv`);
+imagesc(patient_data)
+
+{% endhighlight %} 
+
 I think that exposing this sort of powerful functionality early is important:
 it makes learners feel like "this might actually be worth my time" and 
 encourages them to participate more. 
