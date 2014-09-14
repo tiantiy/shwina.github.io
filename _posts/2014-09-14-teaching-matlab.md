@@ -76,21 +76,20 @@ type in to the command line would be something like this:
 
 {% highlight matlab %}
 
-a = 1
-b = 2
-a + b
-a * b
-c = [a, b]
+>> a = 1
+>> b = 2
+>> a + b
+>> a * b
+>> c = [a, b]
 
 {% endhighlight %} 
-
 
 Compare _that_ to the first couple of lines of code that we type in now:
 
 {% highlight matlab %}
 
-patient_data = csvread(`inflammation-01.csv`);
-imagesc(patient_data)
+>> patient_data = csvread(`inflammation-01.csv`);
+>> imagesc(patient_data)
 
 {% endhighlight %} 
 
