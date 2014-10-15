@@ -8,7 +8,7 @@ title: "Testing Scientific Code"
 Is scientific code really testable?
 I heard a story recently about
 a chemical engineer who said,
-"If I could test my code, I would have published by now."
+*"If I could test my code, I would have published by now."*
 This is something that *characterizes* scientific code---
 we write it because we *don't know* what the answer is.
 Therefore, we can't write tests for it.
