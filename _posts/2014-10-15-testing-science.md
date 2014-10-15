@@ -5,6 +5,16 @@ title: "Testing Scientific Code"
 
 ![Does My Code Work?]({{site.url}}/assets/phd033114s.gif)
 
+People often tell me they're "writing a program",
+or "writing code that does *x*".
+There's a certain hesitation,
+*contempt* almost, in the scientific community,
+associated with the word *software* - as if
+writing software just isn't something scientists do.
+I suspect that this has a lot to do with
+what calling a piece of code "software" seems
+to imply: it works, it's well tested, and reliable.
+
 Is scientific code really testable?
 I heard a story recently about
 a chemical engineer who said,
@@ -31,11 +41,11 @@ you're going to have to convince somebody
 that your code works.
 Before you do that, you have to convince
 *yourself* that your code works.
-And whether or not you call that bit 'testing',
+And whether or not you call that bit *testing*,
 you're still doing it.
 What's more - you can *document* the way you're doing it,
-often in code,
-and without realizing it,
+often in code.
+And without realizing it,
 you've written a test for your code.
 
 # How are ~~scientists~~ grad students testing code?
