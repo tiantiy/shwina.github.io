@@ -44,7 +44,7 @@ But I *can* [extrapolate](http://xkcd.com/605/) from the
 way I've tested code,
 and seen other grad students test code.
 
-## It looks OK
+#### It looks OK
 Generally applied during earlier
 stages of code development.
 You write some code,
@@ -55,8 +55,8 @@ frequent feedback.
 It is of course incomplete, and I've almost
 always regretted relying entirely on *it looks OK*.
 
-## Test Oracle
+#### Test Oracle
 
-## Extrapolation
+#### Extrapolation
 
-## Unit Tests
+#### Unit Tests
