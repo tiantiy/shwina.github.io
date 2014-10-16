@@ -59,7 +59,8 @@ But I *can* [extrapolate](http://xkcd.com/605/) from the
 way I've tested code,
 and seen other grad students test code.
 
-#### It looks OK
+**It looks OK**
+
 "It looks OK" is generally applied during earlier
 stages of code development.
 You write some code,
@@ -71,17 +72,22 @@ frequent feedback and can help fix bugs early.
 It is of course incomplete, and I've almost
 always regretted relying entirely on *it looks OK*.
 
-#### Test Oracle
+**Test Oracle**
+
 Most grad students write code that aspires to
-*reproduce* some results -
+*reproduce* some results:
 either experimental data,
-or results from another code.
-These 
+or results from another code - know as
+*test oracles*.
 The effectiveness of the method obviously depends on
 how good the oracles are and the features
 of the software that they test.
+For example, does the experimental data collected
+exercise the entire range of input parameters
+that the code is going to be used for?
 
-#### Unit Tests
+**Unit Tests**
+
 Some grad students write unit tests. The idea
 behind unit testing is that 
 if you test small pieces of code
