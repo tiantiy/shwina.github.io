@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Teaching MATLAB in 3 hours"
+title: "Teaching MATLAB"
 ---
 
 I had the opportunity to introduce MATLAB to two groups
