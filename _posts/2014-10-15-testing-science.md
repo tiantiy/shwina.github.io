@@ -5,8 +5,8 @@ title: "Testing Scientific Code"
 
 ![Does My Code Work?]({{site.url}}/assets/phd033114s.gif)
 
-People often tell me they're "writing a program",
-or "writing code that does *x*".
+People often tell me they're *writing a program*,
+or *writing code that does "x"*.
 There's a certain hesitation,
 *contempt* almost, in the scientific community,
 associated with the word *software* - as if
@@ -22,10 +22,13 @@ a chemical engineer who said,
 
 *"If I knew what my code was supposed to do, I would have published by now."*
 
-This is something that *characterizes* scientific code --
+I see the point. 
+Something that *characterizes* scientific code is that
 we write it because we *don't know* what the answer is.
 Therefore, we can't write tests for it.
+
 And so testing scientific code is an oxymoron.
+
 And we shouldn't waste our time trying to do it. 
 
 Right?
