@@ -11,24 +11,24 @@ There's a certain hesitation,
 *contempt* almost, in the scientific community,
 associated with the word *software* - as if
 writing software just isn't something scientists do.
-I suspect that this has a lot to do with
-what calling a piece of code "software" seems
-to imply: it works, it's well tested, and reliable.
+I suspect that this has to do with what calling it
+*software* says about your code -
+that it works. It's reliable, it's friendly,
+and most importantly, it's *testable*.
 
-Is scientific code really testable?
+So, is scientific code really testable?
 I heard a story recently about
 a chemical engineer who said,
 
-*"If I could test my code, I would have published by now."*
+*"If I knew what my code was supposed to do, I would have published by now."*
 
 This is something that *characterizes* scientific code --
 we write it because we *don't know* what the answer is.
 Therefore, we can't write tests for it.
 And so testing scientific code is an oxymoron.
-And we shouldn't waste our time trying to do it.
-Right?
+And we shouldn't waste our time trying to do it. 
 
-Of course not.
+Right?
 
 We're guaranteed by the
 [scientific method](http://en.wikipedia.org/wiki/Scientific_method)
@@ -46,7 +46,7 @@ you're still doing it.
 What's more - you can *document* the way you're doing it,
 often in code.
 And without realizing it,
-you've written a test for your code.
+you've tested your code.
 
 # How are ~~scientists~~ grad students testing code?
 
@@ -57,18 +57,39 @@ way I've tested code,
 and seen other grad students test code.
 
 #### It looks OK
-Generally applied during earlier
+"It looks OK" is generally applied during earlier
 stages of code development.
 You write some code,
-visualize the results,
+visualize the results, i.e.,
+plot a graph or print some statistics,
 and if *it looks OK*, move on. This is by no means
-a poor method of testing, and provides quick,
-frequent feedback.
+a poor method of testing: it provides quick,
+frequent feedback and can help fix bugs early.
 It is of course incomplete, and I've almost
 always regretted relying entirely on *it looks OK*.
 
 #### Test Oracle
-
-#### Extrapolation
+Most grad students write code that aspires to
+*reproduce* some results -
+either experimental data,
+or results from another code.
+These 
+The effectiveness of the method obviously depends on
+how good the oracles are and the features
+of the software that they test.
 
 #### Unit Tests
+Some grad students write unit tests. The idea
+behind unit testing is that 
+if you test small pieces of code
+individually and extensively,
+then you can be confident that your software works.
+We're also taught that writing code
+that can be unit-tested leads to better design, 
+i.e.,
+by dividing your code into small pieces that can
+each be run independently,
+you're getting modularity, reuseability and
+all that good stuff *in addition* to
+testability.
+
