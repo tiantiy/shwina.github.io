@@ -20,7 +20,7 @@ So, is scientific code really testable?
 I heard a story recently about
 a chemical engineer who said,
 
-*"If I knew what my code was supposed to do, I would have published by now."*
+*If I knew what my code was supposed to do, I would have published by now.*
 
 I see the point. 
 Something that *characterizes* scientific code is that
@@ -64,20 +64,27 @@ and seen other grad students test code.
 "It looks OK" is generally applied during earlier
 stages of code development.
 You write some code,
-visualize the results, i.e.,
+summarize some results, e.g.,
 plot a graph or print some statistics,
 and if *it looks OK*, move on. This is by no means
 a poor method of testing: it provides quick,
 frequent feedback and can help fix bugs early.
-It is of course incomplete, and I've almost
-always regretted relying entirely on *it looks OK*.
+It is of course, incomplete, and provides
+no new information other than 'something is wrong
+somewhere'.
+
+It looks OK is particularly effective 
+in interactive programming environments,
+where you don't have to 
+do an edit-compile-link-run cycle 
+before you can perform a check.
 
 **Test Oracle**
 
 Most grad students write code that aspires to
 *reproduce* some results:
 either experimental data,
-or results from another code - know as
+or results from another code - known as
 *test oracles*.
 The effectiveness of the method obviously depends on
 how good the oracles are and the features
@@ -85,11 +92,18 @@ of the software that they test.
 For example, does the experimental data collected
 exercise the entire range of input parameters
 that the code is going to be used for?
+Does it cover edge cases?
+
+Test oracles are great in the Verification and
+Validation stage of development. But they're
+not so useful in the earlier development cycles,
+and it's a terrible idea to wait that long before
+doing any testing.
 
 **Unit Tests**
 
-Some grad students write unit tests. The idea
-behind unit testing is that 
+Some grad students write unit tests. 
+The idea is that
 if you test small pieces of code
 individually and extensively,
 then you can be confident that your software works.
@@ -102,3 +116,58 @@ you're getting modularity, reuseability and
 all that good stuff *in addition* to
 testability.
 
+I'm going to admit it. 
+I'm a complete sucker for unit testing -- 
+the *idea* behind unit testing. 
+In practice,
+I write tests that resemble unit tests,
+but they might test larger bits of code than
+typical unit tests do. 
+They might take longer than
+unit tests are supposed to.
+But it works for me.
+Writing these "unit tests" doesn't take me a lot of time,
+so I can write a lot of them.
+With *automated testing frameworks*, I can run them often.
+And it makes catching and fixing bugs a whole lot easier.
+
+# Which is better?
+
+Use all of them.
+Any testing guru will tell you that
+some testing is better than no testing.
+And so *all the testing* is better than some testing.
+Like Ned Batchelder said: 
+
+*How often have you heard someone say, "I wrote a lot of tests, but it wasn't worth it, so I deleted them." They don't. Tests are good.*
+
+# What makes good tests?
+
+* [Coverage](http://martinfowler.com/bliki/TestCoverage.html) 
+is *generally* a good measure for the quality of tests, i.e., 
+what percentage of code is actually being exercised 
+by the tests.
+
+* When good tests fail,
+they tell you *exactly* where the problem is,
+down to a few lines of code.
+
+* Good tests can be run often,
+so they're not computationally intensive.
+If testing is going to take me more than a few seconds,
+I'm not going to do it.
+
+* Good tests cover the edge cases.
+
+# Where to learn about testing?
+
+OK. I've said enough about testing without really
+quantifying anything. What *is* a test and how to write one?
+You can definitely do better than learn from this blog.
+Here are my favourite resources on testing:
+
+* [Ned Batchelder - Getting Started Testing (text)](http://nedbatchelder.com/text/test0.html)
+
+* [Software Carpentry - Defensive Programming with Python (text)](http://software-carpentry.org/v5/novice/python/05-defensive.html)
+
+* [Scipy 2013 - Unit Testing for Scientific Software (video)](http://conference.scipy.org/scipy2013/tutorial_detail.php?id=106)
