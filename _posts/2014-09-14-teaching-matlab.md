@@ -19,8 +19,6 @@ with a broad range of expectations:
 * How to do _X_ with MATLAB?, 
 * How can I use MATLAB more effectively than I already am?
 
-# What to teach?
-
 I'm a huge fan of <a href="http://software-carpentry.org/" target="_blank">
 Software Carpentry</a>
 and their _evidence-based_ 
@@ -46,8 +44,6 @@ The concepts covered are, in this order:
 * How and why to write MATLAB functions
 * Conditionals in MATLAB
 * Writing tests for functions
-
-# Motivation
 
 The lessons are built around a central task: analyzing and visualizing 
 the data from several .csv files. With every lesson, we make our code
@@ -97,8 +93,6 @@ I think that exposing this sort of powerful functionality early is important:
 it makes learners feel like "this might actually be worth my time" and 
 encourages them to participate more. 
 
-# Demo v/s Live Coding
-
 Getting novice programmers to follow along command-by-command is slow: they're
 going to meet with a lot of errors, even with the simplest of commands. The most common 
 mistakes I've seen learners make in workshops:
@@ -129,8 +123,6 @@ on a single dataset, and produces a single figure. _Then_ ask them to
 look at a more complex version of that script that was distributed to them
 at the beginning of the session.
 
-# Etherpad
-
 I also experimented with a workshop etherpad, and gave learners the option
 of taking notes there instead of on their personal notepads/computers.
 Most learners preferred not to interact too much with the etherpad,
@@ -140,8 +132,6 @@ are some possible reasons:
 * Not enough time
 * Not familiar with etherpad
 * Not as convenient/useful as personal notes
-
-# Feedback
 
 I gave participants the option of providing feedback, either on the public
 etherpad, or on pieces of paper. Feedback on paper was generally more
