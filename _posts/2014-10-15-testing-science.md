@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: "Testing Scientific Code"
 ---
 
@@ -171,3 +172,22 @@ Here are my favourite resources on testing:
 * [Software Carpentry - Defensive Programming with Python (text)](http://software-carpentry.org/v5/novice/python/05-defensive.html)
 
 * [Scipy 2013 - Unit Testing for Scientific Software (video)](http://conference.scipy.org/scipy2013/tutorial_detail.php?id=106)
+
+% if page.comments %
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ashwinsrinath'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+% end if %
