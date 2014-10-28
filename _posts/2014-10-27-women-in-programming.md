@@ -22,7 +22,7 @@ If you have ideas, leave me a note (ashwinsrnth@gmail.com).
 [Here](https://etherpad.mozilla.org/Phhc5A2tv8) is a more
 public and anonymous platform that I will keep an eye on.
 If you are already active (as part of a community or otherwise)
-in getting more women to program - please let me know
+in getting more women to program - please let me know,
 I'd love to contribute in some way.
 I do a bit of teaching programming. Every workshop
 I've done on programming has had less than 20% women
