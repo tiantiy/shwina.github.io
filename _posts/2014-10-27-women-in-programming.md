@@ -30,3 +30,5 @@ I've done on programming has had less than 20% women
 You can reach out to a better audience - all my material
 is available for review and improvement, and I'd love to be
 able to collaborate with you in making it happen.
+
+And please, spread the word.
