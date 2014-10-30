@@ -19,7 +19,7 @@ I just don't know where to start.
 
 So if you're a woman in programming, please help.
 If you have ideas, leave me a note (ashwinsrnth@gmail.com).
-[Here](https://etherpad.mozilla.org/Phhc5A2tv8) is a more
+[Here](https://etherpad.mozilla.org/kij1fgay8Q)
 public and anonymous platform that I will keep an eye on.
 If you are already active (as part of a community or otherwise)
 in getting more women to program - please let me know,
