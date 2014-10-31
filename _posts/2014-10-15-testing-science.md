@@ -172,3 +172,6 @@ Here are my favourite resources on testing:
 * [Software Carpentry - Defensive Programming with Python (text)](http://software-carpentry.org/v5/novice/python/05-defensive.html)
 
 * [Scipy 2013 - Unit Testing for Scientific Software (video)](http://conference.scipy.org/scipy2013/tutorial_detail.php?id=106)
+
+[Here](http://ivory.idyll.org/blog/automated-testing-and-research-software.html) is a great
+article on this subject.
