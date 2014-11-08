@@ -3,12 +3,78 @@ layout: post
 title: "Profiling Parallel Code (under construction)"
 ---
 
-In high performance computing, performance is kind of
-a big deal. And step one in performance analysis is
+In high performance computing,
+performance is kind of a big deal.
+And first step in performance analysis 
+and performance *improvement*
+is
 [profiling](http://en.wikipedia.org/wiki/Profiling_%28computer_programming%29).
 
-Test bash highlighting:
+High-performance computing almost always entails some
+form of [parallelism](http://en.wikipedia.org/wiki/Parallel_computing).
+And parallel programs are plain hard. They're harder to write,
+harder to debug, and harder to profile.
+
+# `gprof`
+
+`gprof` is pretty great. Just compile your code with `-pg`, and `-g`,
 
 {% highlight bash %}
-$ gprof -s app.out gmon.out-*
-{% endhighlight %}
+    gcc -pg -g -O0 hello.c bye.c -o hibye.exe
+{% end highlight %}
+
+run your code as usual,
+
+{% highlight bash %}
+    ./hibye.exe
+{% end highlight %}
+
+and you'll see `gmon.out`. Now,
+
+{% highlight bash %}
+    gprof hibye.exe gmon.out
+{% end highlight %}
+
+should summarize the performance of your code.
+Beware, `gprof` will not
+pick up on any calls to shared library functions.
+OK, that's a downer, and
+there's lots more. But it's easy to use, and gives me quick results.
+With the legacy code I work with, where there *are* no shared library calls,
+`gprof` is pretty awesome.
+
+# `gprof` + MPI
+
+`gprof` isn't designed to work with MPI code.
+Of course, it's possible with sufficient abuse:
+
+First, set the `GMON_OUT_PREFIX`:
+
+{% highlight bash %}
+    export GMON_OUT_PREFIX=gmon.out-
+{% end highlight %}
+
+Then, the usual business:
+
+{% highlight bash %}
+    mpicc -pg -g -O0 hello.c bye.c -o hibye.exe
+    mpiexec -n 32 hibye.exe
+{% end highlight %}
+
+You should see 32 (or however many processes) files,
+with names `gmon.out-<pid>`.
+This is an undocumented feature of `glibc`,
+and it really shouldn't be - it's massively useful.
+Now you have a separate `gmon.out` file for every
+MPI process. Sum them:
+
+{% highlight bash %}
+    gprof -s hibye.exe gmon.out-*
+{% end highlight %}
+
+And use the resulting `gmon.sum` to generate
+`gprof` output:
+
+{% highlight bash %}
+    gprof hibye.exe gmon.sum
+{% end highlight %}
