@@ -21,19 +21,19 @@ harder to debug, and harder to profile.
 
 {% highlight bash %}
     gcc -pg -g -O0 hello.c bye.c -o hibye.exe
-{% end highlight %}
+{% endhighlight %}
 
 run your code as usual,
 
 {% highlight bash %}
     ./hibye.exe
-{% end highlight %}
+{% endhighlight %}
 
 and you'll see `gmon.out`. Now,
 
 {% highlight bash %}
     gprof hibye.exe gmon.out
-{% end highlight %}
+{% endhighlight %}
 
 should summarize the performance of your code.
 Beware, `gprof` will not
@@ -52,14 +52,14 @@ First, set the `GMON_OUT_PREFIX`:
 
 {% highlight bash %}
     export GMON_OUT_PREFIX=gmon.out-
-{% end highlight %}
+{% endhighlight %}
 
 Then, the usual business:
 
 {% highlight bash %}
     mpicc -pg -g -O0 hello.c bye.c -o hibye.exe
     mpiexec -n 32 hibye.exe
-{% end highlight %}
+{% endhighlight %}
 
 You should see 32 (or however many processes) files,
 with names `gmon.out-<pid>`.
@@ -70,11 +70,11 @@ MPI process. Sum them:
 
 {% highlight bash %}
     gprof -s hibye.exe gmon.out-*
-{% end highlight %}
+{% endhighlight %}
 
 And use the resulting `gmon.sum` to generate
 `gprof` output:
 
 {% highlight bash %}
     gprof hibye.exe gmon.sum
-{% end highlight %}
+{% endhighlight %}
