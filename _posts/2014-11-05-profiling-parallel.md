@@ -46,9 +46,10 @@ With the legacy code I work with, where there *are* no shared library calls,
 # gprof + MPI
 
 `gprof` isn't designed to work with MPI code.
-Of course, it's possible with sufficient abuse:
+As with many things, it's possible
+with sufficient abuse:
 
-First, set the `GMON_OUT_PREFIX`:
+First, set the environemnt variable `GMON_OUT_PREFIX`:
 
 {% highlight bash %}
     export GMON_OUT_PREFIX=gmon.out-
@@ -65,6 +66,7 @@ You should see 32 (or however many processes) files,
 with names `gmon.out-<pid>`.
 This is an undocumented feature of `glibc`,
 and it really shouldn't be - it's massively useful.
+
 Now you have a separate `gmon.out` file for every
 MPI process. Sum them:
 
