@@ -20,19 +20,19 @@ harder to debug, and harder to profile.
 `gprof` is pretty great. Just compile your code with `-pg`, and `-g`,
 
 {% highlight bash %}
-    gcc -pg -g -O0 hello.c bye.c -o hibye.exe
+gcc -pg -g -O0 hello.c bye.c -o hibye.exe
 {% endhighlight %}
 
 run your code as usual,
 
 {% highlight bash %}
-    ./hibye.exe
+./hibye.exe
 {% endhighlight %}
 
 and you'll see `gmon.out`. Now,
 
 {% highlight bash %}
-    gprof hibye.exe gmon.out
+gprof hibye.exe gmon.out
 {% endhighlight %}
 
 should summarize the performance of your code.
@@ -52,14 +52,14 @@ it's possible with sufficient abuse:
 First, set the environment variable `GMON_OUT_PREFIX`:
 
 {% highlight bash %}
-export GMON_OUT_PREFIX=gmon.out-
+$ export GMON_OUT_PREFIX=gmon.out-
 {% endhighlight %}
 
 Then, the usual business:
 
 {% highlight bash %}
-mpicc -pg -g -O0 hello.c bye.c -o hibye.exe
-mpiexec -n 32 hibye.exe
+$ mpicc -pg -g -O0 hello.c bye.c -o hibye.exe
+$ mpiexec -n 32 hibye.exe
 {% endhighlight %}
 
 You should see 32 (or however many processes) files,
@@ -71,14 +71,14 @@ Now you have a separate `gmon.out` file for every
 MPI process. Awesome. Sum them:
 
 {% highlight bash %}
-gprof -s hibye.exe gmon.out-*
+$ gprof -s hibye.exe gmon.out-*
 {% endhighlight %}
 
 And use the resulting `gmon.sum` to generate
 `gprof` output:
 
 {% highlight bash %}
-gprof hibye.exe gmon.sum
+$ gprof hibye.exe gmon.sum
 {% endhighlight %}
 
 [Credit](http://cluster.earlham.edu/wiki/index.php/Cluster:Gprof#Basic_Recipe_-_Parallel_MPI_Code)
