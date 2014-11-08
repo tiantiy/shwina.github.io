@@ -5,7 +5,7 @@ title: "Profiling Parallel Code"
 
 In high performance computing,
 performance is kind of a big deal.
-And first step in performance analysis 
+And the first step in performance analysis 
 and performance *improvement*
 is
 [profiling](http://en.wikipedia.org/wiki/Profiling_%28computer_programming%29).
