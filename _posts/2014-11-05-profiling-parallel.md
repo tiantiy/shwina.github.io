@@ -46,8 +46,8 @@ With the legacy code I work with, where there *are* no shared library calls,
 # gprof + MPI
 
 `gprof` isn't designed to work with MPI code.
-As with many things, it's possible
-with sufficient abuse:
+But, as is generally the case with these things,
+it's possible with sufficient abuse:
 
 First, set the environemnt variable `GMON_OUT_PREFIX`:
 
@@ -68,7 +68,7 @@ This is an undocumented feature of `glibc`,
 and it really shouldn't be - it's massively useful.
 
 Now you have a separate `gmon.out` file for every
-MPI process. Sum them:
+MPI process. Awesome. Sum them:
 
 {% highlight bash %}
     gprof -s hibye.exe gmon.out-*
@@ -80,3 +80,12 @@ And use the resulting `gmon.sum` to generate
 {% highlight bash %}
     gprof hibye.exe gmon.sum
 {% endhighlight %}
+
+[Credit](http://cluster.earlham.edu/wiki/index.php/Cluster:Gprof#Basic_Recipe_-_Parallel_MPI_Code)
+where it's due. 
+Now, I haven't figured out how to replace the `pid`
+with the MPI rank - 
+this could be exponentially more useful to some users.
+And the method mentioned in the source doesn't really
+seem to be working.
+But I'm sure this is possible with some ingenuity.
