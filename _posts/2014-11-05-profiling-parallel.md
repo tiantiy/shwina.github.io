@@ -49,7 +49,7 @@ With the legacy code I work with, where there *are* no shared library calls,
 But, as is generally the case with these things,
 it's possible with sufficient abuse:
 
-First, set the environemnt variable `GMON_OUT_PREFIX`:
+First, set the environment variable `GMON_OUT_PREFIX`:
 
 {% highlight bash %}
 export GMON_OUT_PREFIX=gmon.out-
