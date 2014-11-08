@@ -20,19 +20,19 @@ harder to debug, and harder to profile.
 `gprof` is pretty great. Just compile your code with `-pg`, and `-g`,
 
 {% highlight bash %}
-gcc -pg -g -O0 hello.c bye.c -o hibye.exe
+$ gcc -pg -g -O0 hello.c bye.c -o hibye.exe
 {% endhighlight %}
 
 run your code as usual,
 
 {% highlight bash %}
-./hibye.exe
+$ ./hibye.exe
 {% endhighlight %}
 
 and you'll see `gmon.out`. Now,
 
 {% highlight bash %}
-gprof hibye.exe gmon.out
+$ gprof hibye.exe gmon.out
 {% endhighlight %}
 
 should summarize the performance of your code.
