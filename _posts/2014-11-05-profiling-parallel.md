@@ -15,7 +15,7 @@ form of [parallelism](http://en.wikipedia.org/wiki/Parallel_computing).
 And parallel programs are plain hard. They're harder to write,
 harder to debug, and harder to profile.
 
-# `gprof`
+# gprof
 
 `gprof` is pretty great. Just compile your code with `-pg`, and `-g`,
 
@@ -43,7 +43,7 @@ there's lots more. But it's easy to use, and gives me quick results.
 With the legacy code I work with, where there *are* no shared library calls,
 `gprof` is pretty awesome.
 
-# `gprof` + MPI
+# gprof + MPI
 
 `gprof` isn't designed to work with MPI code.
 Of course, it's possible with sufficient abuse:
