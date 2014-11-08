@@ -52,14 +52,14 @@ it's possible with sufficient abuse:
 First, set the environemnt variable `GMON_OUT_PREFIX`:
 
 {% highlight bash %}
-    export GMON_OUT_PREFIX=gmon.out-
+export GMON_OUT_PREFIX=gmon.out-
 {% endhighlight %}
 
 Then, the usual business:
 
 {% highlight bash %}
-    mpicc -pg -g -O0 hello.c bye.c -o hibye.exe
-    mpiexec -n 32 hibye.exe
+mpicc -pg -g -O0 hello.c bye.c -o hibye.exe
+mpiexec -n 32 hibye.exe
 {% endhighlight %}
 
 You should see 32 (or however many processes) files,
@@ -71,14 +71,14 @@ Now you have a separate `gmon.out` file for every
 MPI process. Awesome. Sum them:
 
 {% highlight bash %}
-    gprof -s hibye.exe gmon.out-*
+gprof -s hibye.exe gmon.out-*
 {% endhighlight %}
 
 And use the resulting `gmon.sum` to generate
 `gprof` output:
 
 {% highlight bash %}
-    gprof hibye.exe gmon.sum
+gprof hibye.exe gmon.sum
 {% endhighlight %}
 
 [Credit](http://cluster.earlham.edu/wiki/index.php/Cluster:Gprof#Basic_Recipe_-_Parallel_MPI_Code)
