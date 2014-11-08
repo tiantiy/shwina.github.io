@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Profiling Parallel Code (under construction)"
+title: "Profiling Parallel Code"
 ---
 
 In high performance computing,
