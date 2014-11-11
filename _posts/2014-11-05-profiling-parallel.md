@@ -92,7 +92,25 @@ But I'm sure this is possible with some ingenuity.
 
 # mpiP
 
-[mpiP](http://mpip.sourceforge.net/) is a lightweight
+[mpiP](http://mpip.sourceforge.net/) is a neat little
 tool for profiling MPI applications.
 In particular, it's extremely useful in figuring out
-how much your application is spending time
+how much your application is spending time *communicating*
+relative to *computing*.
+
+The documentation for setting up and using `mpiP`
+is complete (good), but small (better).
+Once you have `mpiP` set up, profiling your code is
+as easy as linking it with the `mpiP` library and some
+other stuff it needs:
+
+{% highlight bash %}
+$ mpicc -g -O0 hello.c bye.c -o hibye.exe -lmpiP -liberty -lbfd -lunwind
+{% endhighlight %}
+
+Running your code (`mpiexec`) will produce `mpiP` output.
+
+I've found that while `gprof` and `mpiP` are great tools
+that do different things, using them *both* gives
+me a very good idea of where my programs are spending time
+and where I should focus optimization efforts.
