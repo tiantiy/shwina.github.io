@@ -10,18 +10,14 @@ On the IPython shell,
 on a whim,
 I typed:
 
-{% highlight shell %}
-np.*grid*?
-{% endhighlight %}
+    np.*grid*?
 
 not knowing what to expect.
 It did just what I wanted:
 
-{% highlight shell %}
-np.meshgrid
-np.mgrid
-np.ogrid
-{% endhighlight %}
+    np.meshgrid
+    np.mgrid
+    np.ogrid
 
 That made my day.
 Thanks, IPython!
