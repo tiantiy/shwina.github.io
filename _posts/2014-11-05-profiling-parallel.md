@@ -89,3 +89,10 @@ this could be exponentially more useful to some users.
 And the method mentioned in the source doesn't really
 seem to be working.
 But I'm sure this is possible with some ingenuity.
+
+# mpiP
+
+[mpiP](http://mpip.sourceforge.net/) is a lightweight
+tool for profiling MPI applications.
+In particular, it's extremely useful in figuring out
+how much your application is spending time
