@@ -11,7 +11,7 @@ on a whim,
 I typed:
 
 {% highlight python %}
-np.*.grid*?
+    > np.*grid*?
 {% endhighlight %}
 
 not knowing what to expect.
