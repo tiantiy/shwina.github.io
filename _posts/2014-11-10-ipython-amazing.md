@@ -24,4 +24,4 @@ np.ogrid
 {% endhighlight %}
 
 That made my day.
-Thanks, Ipython!
+Thanks, IPython!
