@@ -10,7 +10,7 @@ and performance *improvement*
 is
 [profiling](http://en.wikipedia.org/wiki/Profiling_%28computer_programming%29).
 
-High-performance computing almost always entails some
+High performance computing almost always entails some
 form of [parallelism](http://en.wikipedia.org/wiki/Parallel_computing).
 And parallel programs are plain hard. They're harder to write,
 harder to debug, and harder to profile.
