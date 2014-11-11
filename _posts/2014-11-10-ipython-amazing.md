@@ -10,14 +10,14 @@ On the IPython shell,
 on a whim,
 I typed:
 
-{% highlight python %}
-    > np.*grid*?
+{% highlight shell %}
+np.*grid*?
 {% endhighlight %}
 
 not knowing what to expect.
 It did just what I wanted:
 
-{% highlight python %}
+{% highlight shell %}
 np.meshgrid
 np.mgrid
 np.ogrid
