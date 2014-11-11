@@ -10,6 +10,7 @@ On the IPython shell,
 on a whim,
 I typed:
 
+    import numpy as np
     np.*grid*?
 
 not knowing what to expect.
