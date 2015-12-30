@@ -48,7 +48,7 @@ Here's how to do it with `petsc4py` and PyCUDA.
 We'll dot two vectors using a custom kernel.
 First, we'll create the input and output vectors:
 
-~~~
+```python
 from petsc4py import PETSc
 from pycuda import autoinit
 import pycuda.driver as cuda
@@ -76,7 +76,7 @@ c.setSizes(N)
 a.set(3.0)
 b.set(2.0)
 c.set(0.0)
-~~~
+```
 
 Next, we'll use the `getCUDAHandle` method
 to get the raw CUDA pointers
