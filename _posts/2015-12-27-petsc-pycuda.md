@@ -46,9 +46,10 @@ See a few examples of this [here]
 
 Here's how to do it with `petsc4py` and PyCUDA.
 We'll dot two vectors using a custom kernel.
+The following bits of code all go in a single Python script `petdot.py`.
 First, we'll create the input and output vectors:
 
-```python
+{% highlight python %}
 from petsc4py import PETSc
 from pycuda import autoinit
 import pycuda.driver as cuda
@@ -76,22 +77,22 @@ c.setSizes(N)
 a.set(3.0)
 b.set(2.0)
 c.set(0.0)
-```
+{% endhighlight %}
 
 Next, we'll use the `getCUDAHandle` method
 to get the raw CUDA pointers
 of the underlying GPU buffers:
 
-~~~
+{% highlight python %}
 a_ptr = a.getCUDAHandle()
 b_ptr = b.getCUDAHandle()
 c_ptr = c.getCUDAHandle()
-~~~
+{% endhighlight %}
 
 Next, we'll write a CUDA kernel implementing
 the dot product, and use PyCUDA to interface with it:
 
-~~~
+{% highlight python %}
 kernel_text = '''
 __global__ void gpuDot(double* a_d,
     double* b_d, double* c_d, int n) {
@@ -103,27 +104,33 @@ __global__ void gpuDot(double* a_d,
 dot = compiler.SourceModule(kernel_text,
         options=['-O2']).get_function('gpuDot')
 dot.prepare('PPPi')
-~~~
+{% endhighlight %}
 
 Now, we'll perform the dot product:
 
-~~~
+{% highlight python %}
 dot.prepared_call((1, 1, 1), (N, 1, 1),
     a_ptr, b_ptr, c_ptr, N)
-~~~
+{% endhighlight %}
 
 The API requires us to "restore" the CUDA handles:
 
-~~~
+{% highlight python %}
 a.restoreCUDAHandle(a_ptr)
 b.restoreCUDAHandle(b_ptr)
 c.restoreCUDAHandle(c_ptr)
-~~~
+{% endhighlight %}
 
 Now look at the output vector:
+{% highlight python %}
+c.view()
+{% endhighlight %}
+
+
+Here's a run of the above program on 2 processes:
 
 ~~~
-[atrikut@node0080 sandbox]$ mpiexec -n 2 python sandbox.py 
+[atrikut@node0080 sandbox]$ mpiexec -n 2 python petdot.py 
 Vec Object: 2 MPI processes
   type: mpicusp
 Process [0]
