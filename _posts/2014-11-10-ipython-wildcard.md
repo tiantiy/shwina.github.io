@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "IPython Never Ceases To Amaze"
+title: "Wildcard completion in IPython"
 ---
 
 I wanted to look up
