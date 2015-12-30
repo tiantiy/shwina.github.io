@@ -3,19 +3,11 @@ layout: post
 title: "Using PETSc for Python with PyCUDA"
 ---
 
-[PETSc](http://www.mcs.anl.gov/petsc/)
-is a framework for
-doing scientific computation in parallel.
-Specifically,
-PETSc provides tools and data structures for
-assembling, manipulating and operating on
-distributed Vectors and Matrices,
-and linear and non-linear equation solvers
-built on these tools and data structures.
-PETSc is available for C, C++ and Fortran.
-The
+This post is about how to use the
 [petsc4py](https://bitbucket.org/petsc/petsc4py)
-library provides Python bindings for PETSc.
+and [PyCUDA](http://mathema.tician.de/software/pycuda/)
+together to write applications that use several GPUs
+in parallel.
 
 PETSc supports the use of CUDA GPUs via the
 [CUSP](https://developer.nvidia.com/cusp) C++ library.
@@ -126,7 +118,6 @@ Now look at the output vector:
 {% highlight python %}
 c.view()
 {% endhighlight %}
-
 
 Here's a run of the above program on 2 processes:
 
