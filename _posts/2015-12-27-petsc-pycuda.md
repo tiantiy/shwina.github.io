@@ -122,7 +122,7 @@ c.view()
 Here's a run of the above program on 2 processes:
 
 ~~~
-[atrikut@node0080 sandbox]$ mpiexec -n 2 python gpumult.py 
+$ mpiexec -n 2 python gpumult.py 
 Vec Object: 2 MPI processes
   type: mpicusp
 Process [0]
