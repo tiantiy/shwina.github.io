@@ -45,8 +45,9 @@ See a few examples of this [here]
 (http://www.mcs.anl.gov/petsc/petsc-current/src/vec/vec/impls/seq/seqcusp/veccusp.cu#VecCUSPGetCUDAArray).
 
 Here's how to do it with `petsc4py` and PyCUDA.
-We'll dot two vectors using a custom kernel.
-The following bits of code all go in a single Python script `petdot.py`.
+We'll multiply two vectors (elementwise)
+using a custom kernel.
+The following bits of code all go in a single Python script `gpumult.py`.
 First, we'll create the input and output vectors:
 
 {% highlight python %}
@@ -90,26 +91,26 @@ c_ptr = c.getCUDAHandle()
 {% endhighlight %}
 
 Next, we'll write a CUDA kernel implementing
-the dot product, and use PyCUDA to interface with it:
+the elementwise product, and use PyCUDA to interface with it:
 
 {% highlight python %}
 kernel_text = '''
-__global__ void gpuDot(double* a_d,
+__global__ void gpuElemwiseProduct(double* a_d,
     double* b_d, double* c_d, int n) {
     int i = threadIdx.x + blockIdx.x*blockDim.x;
     c_d[i] = a_d[i]*b_d[i];
 }
 '''
 
-dot = compiler.SourceModule(kernel_text,
-        options=['-O2']).get_function('gpuDot')
-dot.prepare('PPPi')
+mult = compiler.SourceModule(kernel_text,
+        options=['-O2']).get_function('gpuElemwiseProduct')
+mult.prepare('PPPi')
 {% endhighlight %}
 
-Now, we'll perform the dot product:
+Now, we'll perform the multiplication:
 
 {% highlight python %}
-dot.prepared_call((1, 1, 1), (N, 1, 1),
+mult.prepared_call((1, 1, 1), (N, 1, 1),
     a_ptr, b_ptr, c_ptr, N)
 {% endhighlight %}
 
@@ -130,7 +131,7 @@ c.view()
 Here's a run of the above program on 2 processes:
 
 ~~~
-[atrikut@node0080 sandbox]$ mpiexec -n 2 python petdot.py 
+[atrikut@node0080 sandbox]$ mpiexec -n 2 python gpumult.py 
 Vec Object: 2 MPI processes
   type: mpicusp
 Process [0]
