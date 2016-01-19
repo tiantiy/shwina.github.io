@@ -106,13 +106,16 @@ mult.prepared_call((1, 1, 1), (N, 1, 1),
     a_ptr, b_ptr, c_ptr, N)
 {% endhighlight %}
 
-The API requires us to "restore" the CUDA handles:
+The API requires us to "restore" the CUDA handles.
 
 {% highlight python %}
 a.restoreCUDAHandle(a_ptr)
 b.restoreCUDAHandle(b_ptr)
 c.restoreCUDAHandle(c_ptr)
 {% endhighlight %}
+
+Actually, it doesn't matter what the input is to
+the `restoreCUDAHandle` function - but whatever.
 
 Now look at the output vector:
 {% highlight python %}
